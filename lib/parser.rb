@@ -1,7 +1,8 @@
 class Parser
 
   def process(data)
-    processed = []
+    processed = [{}]
+
   end
 
 end
