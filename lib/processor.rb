@@ -12,8 +12,8 @@ class Processor
   def unique_views(data)
     urls = []
     data.each { |hash| urls << hash[:url] }
-    p urls.uniq!
-    p uniques = urls.map { |url|
+    uniques = urls.uniq
+    p uniques.map! { |url|
       { url: url, ips: [] }
     }
     data.each { |entry|
@@ -23,7 +23,17 @@ class Processor
         end
       }
     }
-    p uniques
+    p uniques.map! { |hash|
+      { url: hash[:url], ips: hash[:ips].uniq }
+    }
+  end
+
+
+
+  def urls(data)
+    urls = []
+    data.each { |hash| urls << hash[:url] }
+    urls.uniq!
   end
 
 end

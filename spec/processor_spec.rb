@@ -24,7 +24,7 @@ describe Processor do
   context "#unique_views" do
 
     it "has 2 unique visits for /about/2" do
-      expect(processor.unique_views(data)[1][:ips].length).to eq(3)
+      expect(processor.unique_views(data)[1][:ips].length).to eq(2)
     end
 
   end
