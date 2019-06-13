@@ -5,7 +5,7 @@ class Processor
     data.each { |hash| urls << hash[:url] }
     total = urls.uniq
     total.map { |url|
-      "#{url}: #{urls.count(url)} view(s)"
+      { url: url, visits: urls.count(url) }
     }
   end
 

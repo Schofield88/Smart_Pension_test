@@ -12,9 +12,10 @@ describe Processor do
   }
 
   context "#total_views" do
-    
+
     it "builds a counted array" do
-      expect(processor.total_views(data)).to eq(["/about: 1 view(s)", "/about/2: 2 view(s)"])
+      expect(processor.total_views(data)[1][:url]).to eq("/about/2")
+      expect(processor.total_views(data)[1][:visits]).to eq(2)
     end
 
   end
