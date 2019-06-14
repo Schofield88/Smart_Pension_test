@@ -14,7 +14,7 @@ describe Processor do
 
   context "#total_views" do
 
-    it "builds a counted array" do
+    it "Has /about/2 with 3 visits" do
       expect(processor.total_views(data)[1][:url]).to eq("/about/2")
       expect(processor.total_views(data)[1][:visits]).to eq(3)
     end

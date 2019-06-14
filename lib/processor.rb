@@ -13,7 +13,7 @@ class Processor
     urls = []
     data.each { |hash| urls << hash[:url] }
     uniques = urls.uniq
-    p uniques.map! { |url|
+    uniques.map! { |url|
       { url: url, ips: [] }
     }
     data.each { |entry|
@@ -23,17 +23,9 @@ class Processor
         end
       }
     }
-    p uniques.map! { |hash|
+    uniques.map! { |hash|
       { url: hash[:url], ips: hash[:ips].uniq }
     }
-  end
-
-
-
-  def urls(data)
-    urls = []
-    data.each { |hash| urls << hash[:url] }
-    urls.uniq!
   end
 
 end
