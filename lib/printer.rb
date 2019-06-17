@@ -15,16 +15,16 @@ class Printer
     }
   end
 
-end
+  private
 
-private
+  def sort_total(totals)
+    highest = totals.sort_by { |hash| hash[:visits] }
+    highest.reverse
+  end
 
-def sort_total(totals)
-  highest = totals.sort_by { |hash| hash[:visits] }
-  highest.reverse
-end
+  def sort_unique(uniques)
+    most_uniques = uniques.sort_by { |hash| hash[:ips].length }
+    most_uniques.reverse
+  end
 
-def sort_unique(uniques)
-  most_uniques = uniques.sort_by { |hash| hash[:ips].length }
-  most_uniques.reverse
 end
